@@ -4,6 +4,7 @@
 - Banner test Ad integration done (not showing) (bug fix)
 - Main app fully completed
 - Login/Signup/Signout feature implemented
+- Backend Firebase Console fully functional
 
 ## What's left:
 - Chat feature integration
