@@ -1,3 +1,4 @@
+//APP A
 package com.appa
 
 import android.content.Intent
@@ -16,5 +17,27 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("data", "Hello from App A!")
         intent.setPackage("com.appb")  // Ensures it goes to App B
         startActivity(intent)
+    }
+}
+
+//APP B
+package com.appb
+
+import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Receiving Intent from App A
+        val data = intent.getStringExtra("data")
+        if (data != null) {
+            // Handle the data passed from App A
+            Log.d("AppB", "Received data: $data")
+        }
     }
 }
